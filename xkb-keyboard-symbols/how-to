@@ -1,4 +1,23 @@
+## Reloaded
 
+Use this tutorial:
+https://rlog.rgtti.com/2014/05/01/how-to-modify-a-keyboard-layout-in-linux/
+
+I created a variant at the end of us symbol file with the data
+```
+partial alphanumeric_keys
+xkb_symbols "standard-quotes"  {
+
+    include "us(intl)"
+
+    key <AC11> { [ apostrophe,   quotedbl,   dead_acute, dead_diaeresis   ] };
+};
+```
+
+then, followed the tutorial editing the four .lst and .xml files.
+Then modified sway config to use the variant i wanted (standard-quotes), and then it's okay now.
+
+## Old
 1. Go to '/usr/share/X11/xkb/symbols'
 2. Paste 'us-krunn' in the directory.
 3. Dont know if this is necessary but I did it anyway. Go to '/usr/share/X11/xkb/rules'
